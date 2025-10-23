@@ -23,7 +23,7 @@ function App() {
 				maxId = comment.id
 			}
 		}
-		blogPosts.push(<BlogPost post={post} comments={curComments} nextCommentId={maxId+1}/>)
+		blogPosts.push(<BlogPost key={post.id} post={post} comments={curComments} nextCommentId={maxId+1}/>)
 	}
 
   return (
