@@ -1,14 +1,15 @@
 import Comment from "./Comment.jsx"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 function Comments({comments}) {
+	if (comments.length === 0) {
+		return <p className="text-center text-base">Hmm... Looks Empty<br/> Be the First to Comment</p>
+	}
 	
 	// console.log(comments)
 	return (
-		<ul className="grid grid-cols-1 gap-4 ml-4 ">
+		<ul className="text-center grid grid-cols-1 gap-4 p-2">
+			<h3 className="text-lg">Comments</h3>
 			{comments.map(comment => (
-				<li className="text-base align-text-bottom flex flex-row gap-1" key={comment.id}>
-					<FontAwesomeIcon icon={faChevronRight} />
+				<li  key={comment.id}>
 					<Comment comment={comment} />
 				</li>
 			))}

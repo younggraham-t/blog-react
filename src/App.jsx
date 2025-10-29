@@ -1,39 +1,31 @@
 import './App.css'
-import './components/BlogPost.jsx'
-import BlogPost from './components/BlogPost.jsx';
-import Header from './components/header/Header.jsx';
-import Footer from './components/footer/Footer.jsx';
+// import IndividualBlogPost from './components/blogPosts/IndividualBlogPost.jsx';
+import BlogPostsList from './components/blogPosts/BlogPostsList.jsx';
+
+import { Routes, Route } from 'react-router/internal/react-server-client';
+import CommonLayout from './layouts/CommonLayout.jsx';
+import IndividualBlogPost from './components/blogPosts/IndividualBlogPost.jsx';
+import ContactForm from './components/contact/ContactForm.jsx';
 
 
-import posts from "./data/posts.json" with {type: 'json'}
-import comments from "./data/comments.json" with {type: 'json'}
-
-const pages = [{name: "Home", link: "/"}, {name: "About", link: "/"}]
+// import posts from "./data/posts.json" with {type: 'json'}
+// import comments from "./data/comments.json" with {type: 'json'}
 
 function App() {
-	const blogPosts = []
-	for (const post of posts) {
-		const curComments = []
-		let maxId = 0
-		for (const comment of comments) {
-			if (comment.postId === post.id) {
-				curComments.push(comment)
-			}
-			if (comment.id > maxId) {
-				maxId = comment.id
-			}
-		}
-		blogPosts.push(<BlogPost key={post.id} post={post} comments={curComments} nextCommentId={maxId+1}/>)
-	}
+
+	const pages = [
+		{name: "Blog", link: "/"}, 
+		{name: "Contact", link: "/contact"}
+	]
 
   return (
-    <div className="flex flex-col h-screen justify-between gap-4">
-		<Header navLinks={pages} />
-		<main className="grid gap-4 mb-auto">
-			{blogPosts} 
-		</main>
-		<Footer/>
-    </div>
+	  <Routes>
+		<Route element={<CommonLayout pages={pages}/>}>
+			<Route path="/" element={<BlogPostsList/>}/>
+			<Route path="/contact" element={<ContactForm/>}/>
+			<Route path="/posts/:post_id" element={<IndividualBlogPost />} />
+		</Route>
+	  </Routes>
   )
 }
 
