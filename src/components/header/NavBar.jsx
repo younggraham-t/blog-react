@@ -6,7 +6,7 @@ export default function Navbar({pages}) {
 			{pages.map((page, i) => {
 				return (
 				<li key={i}>
-					<Link className="text-xl text-blue-800 hover:text-blue-500 active:text-blue-900"  to={page.link}>{page.name}</Link>
+					<Link className="text-xl text-primary  hover:text-accent active:text-accent"  to={page.link}>{page.name}</Link>
 				</li>
 					
 				)

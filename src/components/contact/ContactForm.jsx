@@ -20,7 +20,7 @@ export default function ContactForm() {
 		setSuccess(true)
 	}
 	
-	const inputFieldClass = "bg-blue-50 text-gray-950 p-1"
+	const inputFieldClass = "bg-text text-background opacity-75 rounded-md p-1"
 
 	return success ? <p className="text-center text-3xl text-green-500">Message Sent</p> : 
 		<div className="text-center flex flex-col gap-4">

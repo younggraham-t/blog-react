@@ -28,7 +28,7 @@ export default function BlogPostsList() {
 	
 	// console.log(posts)
 	return (
-		<div className="w-5/6 m-auto rounded-lg p-2 flex flex-col gap-y-4 text-blue-50">
+		<div className="w-5/6 m-auto rounded-lg p-2 flex flex-col gap-y-4 ">
 		{posts.map(post => (
 			<Link to={"/posts/" + post.id} key={post.id} className="p-2">
 				<BlogPost post={post}/>

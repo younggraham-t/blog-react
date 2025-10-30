@@ -4,8 +4,9 @@ import { Outlet } from 'react-router'
 
 export default function CommonLayout({pages}) {
 	
+	
 	return (
-		<div className="flex flex-col h-screen justify-between gap-4">
+		<div className="flex flex-col min-h-screen justify-between gap-4">
 			<Header pages={pages}/>
 			<main>
 				<Outlet />

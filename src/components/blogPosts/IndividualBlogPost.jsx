@@ -67,7 +67,7 @@ export default function IndividualBlogPost() {
 	}
 
 	return (
-		<section className="w-5/6 m-auto rounded-lg p-1 flex flex-col gap-4 text-blue-50">
+		<section className="w-5/6 m-auto rounded-lg p-1 flex flex-col gap-4 ">
 			<div className="ml-4 flex flex-col gap-2">
 			{isLoadingPost ? <p> Loading Post ... </p> : <BlogPost post={post} />}
 			<CommentForm formSubmitCallback={formSubmit}/>

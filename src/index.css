@@ -4,14 +4,38 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --clr-primary: hsl(193 100 40);
+  --clr-secondary: hsl(193 60 80);
+  --clr-neutral: hsl(193 100 95);
+  --clr-gray: hsl(193 100 5);
+  --clr-accent: hsl(25 90 40);
+
 }
+
+[data-theme="light"] {
+	--clr-text: var(--clr-gray);
+	--clr-bg: var(--clr-neutral);
+}
+
+[data-theme="dark"] {
+	--clr-text: var(--clr-neutral);
+	--clr-bg: var(--clr-gray);
+
+}
+
+@theme {
+	--color-text: var(--clr-text);
+	--color-background: var(--clr-bg);
+	--color-accent: var(--clr-accent);
+	--color-primary: var(--clr-primary);
+	--color-gray: var(--clr-gray);
+	--color-neutral: var(--clr-neutral);
+	--color-secondary: var(--clr-secondary);
+}
+
 

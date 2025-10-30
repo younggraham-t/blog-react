@@ -22,8 +22,8 @@ export default function BlogPost({post}) {
 				<div className="flex flex-col gap-4">
 					<p className="text-base">{hiddenText ? post.content.slice(0, 200).trimEnd() + "..." : post.content}</p>
 					<div>
-						<p className="text-sm">Author: {post.author}</p>
-						<p className="text-sm">Date: {post.date}</p>
+						<p className="text-sm opacity-75">Author: {post.author}</p>
+						<p className="text-sm opacity-75">Date: {post.date}</p>
 					</div>
 				</div>
 			</div>

@@ -11,9 +11,9 @@ export default function CommentForm({formSubmitCallback}) {
 	return (
 		<div className="flex flex-col gap-1 p-2">
 			<h4 className="text-lg ">Leave a Comment:</h4>
-		<form className="flex flex-col gap-2 text-gray-950">
+		<form className="flex flex-col gap-2 ">
 			<input 
-			className=" rounded-md p-1 w-full bg-blue-50" 
+			className=" rounded-md p-1 w-full bg-text text-background opacity-75" 
 			type="text" 
 			name="author" 
 			value={content.author} 
@@ -21,7 +21,7 @@ export default function CommentForm({formSubmitCallback}) {
 			onChange={e => setContent({...content, author: e.target.value})}></input>
 
 			<textarea 
-			className=" rounded-md p-1 w-full h-3/4 bg-blue-50" 
+			className=" rounded-md p-1 w-full h-3/4 bg-text text-background opacity-75" 
 			value={content.message} 
 			placeholder='Comment'
 			onChange= {e => setContent({...content, message: e.target.value})}></textarea>

@@ -7,7 +7,7 @@ export default function Comment({comment}) {
 		<div className="flex flex-row gap-2">
 			<FontAwesomeIcon icon={faChevronRight} />
 			<div className="w-full text-left flex flex-col gap-2">
-				<p className="text-sm">{comment.author}</p>
+				<p className="text-sm opacity-75">{comment.author}</p>
 				<p className="ml-6 text-base">{comment.content}</p>
 			</div>
 		</div>

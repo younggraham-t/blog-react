@@ -2,7 +2,7 @@
 
 export default function Footer() {
 	return (
-		<footer className="text-center bg-blue-300">
+		<footer className="text-center text-gray bg-secondary">
 			<p>&copy; My Blog 2025</p>
 
 		</footer>
