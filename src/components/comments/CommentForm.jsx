@@ -1,11 +1,29 @@
 import {useState} from 'react'
+import axios from 'axios';
+import { useParams } from 'react-router/internal/react-server-client';
+import { useComments } from './CommentsContext.jsx';
 
-export default function CommentForm({formSubmitCallback}) {
+export default function CommentForm() {
+	const params = useParams();
 	const emptyContent = {
 		author: "",
 		message: "",
 	}
 	const [content, setContent] = useState(emptyContent)
+	const {handleAddComment} = useComments()
+	
+	const handleSubmit = async (event) => {
+				event.preventDefault();
+				const submitData = {
+					name: content.author,
+					body: content.message
+				}
+				const res = await axios.post(`https://jsonplaceholder.typicode.com/posts/${params.post_id}/comments`, submitData)
+				
+				// console.log(res.data)
+				handleAddComment(res.data);
+				setContent(emptyContent)
+	}
 	
 	
 	return (
@@ -25,11 +43,7 @@ export default function CommentForm({formSubmitCallback}) {
 			value={content.message} 
 			placeholder='Comment'
 			onChange= {e => setContent({...content, message: e.target.value})}></textarea>
-			<button className="p-0.5 w-1/6 rounded-sm text-lg bg-amber-500 text-gray-950 hover:bg-amber-800 active:bg-amber-200" type="submit" onClick={(e)=> {
-				e.preventDefault();
-				formSubmitCallback(content)
-				setContent(emptyContent)
-			}}>Post</button>
+			<button className="p-0.5 w-1/6 rounded-sm text-lg bg-amber-500 text-gray-950 hover:bg-amber-300 active:bg-amber-200" type="submit" onClick={handleSubmit}>Post</button>
 			
 		</form>
 		</div>
