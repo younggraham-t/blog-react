@@ -6,8 +6,8 @@ export default function ThemeToggle() {
 	const {theme, toggleTheme} = useTheme();
 	const [checked, setChecked] = useState(theme === "dark");
 	
-	console.log(toggleTheme)
-	console.log(theme)
+	// console.log(toggleTheme)
+	// console.log(theme)
 	
 	const handleClick = () => {
 		setChecked(!checked)
@@ -24,7 +24,7 @@ export default function ThemeToggle() {
 			{...checked}
 			onChange={handleClick}></input>
 		
-			<label for="darkMode" className="flex gap-2">
+			<label htmlFor="darkMode" className="flex gap-2">
 			<span className={theme === 'dark' ? "" : "hidden"}>Dark</span>  
 			<span className={theme === 'light' ? "" : "hidden"}>Light</span>
 			</label>
