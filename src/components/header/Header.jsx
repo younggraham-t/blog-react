@@ -1,22 +1,29 @@
 import ThemeToggle from "../theme/ThemeToggle.jsx";
 import Navbar from "./NavBar.jsx";
 
-export default function Header({pages}) {
-	
+export default function Header({ pages }) {
+
 	return (
-		
-		<header className="w-full flex flex-col gap-2 text-center text-gray bg-secondary">
-			<div className="">
-				<h1 className="text-3xl">My Blog</h1>
-				<div className="absolute right-2 top-2">
-					<ThemeToggle />
-					
-				</div>
+
+		<header className="w-full grid grid-cols-12 gap-1 text-center bg-primary text-text">
+			<div className="col-span-2">
+				<img className="" src="/src/assets/blogLogo.svg" alt="logo of backcountry brookies" />
+			</div>
+			<div className="col-span-5">
 				
 			</div>
-			<Navbar pages={pages}/>
-		
-			
+			<div className="col-span-4 content-center">
+				<Navbar pages={pages} />
+			</div>
+
+			<div className="col-span-1 content-center justify-center">
+				{/*
+				<ThemeToggle />
+				*/}
+				
+			</div>
+
+
 		</header>
 	)
 }

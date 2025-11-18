@@ -9,17 +9,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --clr-primary: hsl(193 100 40);
-  --clr-secondary: hsl(193 60 80);
-  --clr-neutral: hsl(193 100 97);
-  --clr-gray: hsl(193 100 5);
-  --clr-accent: hsl(25 90 40);
+  --clr-primary: hsl(33, 96%, 33%);
+  --clr-secondary: hsl(45, 95%, 23%);
+  --clr-neutral: hsl(84, 10%, 72%);
+  --clr-gray: hsl(84 10 15);
+  --clr-accent: hsl(16, 96%, 33%);
+  --clr-accent-secondary: hsl(195, 96%, 38%);
+
 
 }
 
 [data-theme="light"] {
 	--clr-text: var(--clr-gray);
 	--clr-bg: var(--clr-neutral);
+	
 }
 
 [data-theme="dark"] {

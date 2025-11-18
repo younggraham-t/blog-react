@@ -11,9 +11,16 @@ export default function CommentForm() {
 	}
 	const [content, setContent] = useState(emptyContent)
 	const {handleAddComment} = useComments()
+	const [missingDataError, setMissingDataError] = useState(false)
 	
 	const handleSubmit = async (event) => {
 				event.preventDefault();
+				
+				if(content.author === "") {
+					setMissingDataError(true);
+					return;
+				}
+				
 				const submitData = {
 					name: content.author,
 					body: content.message
@@ -43,7 +50,9 @@ export default function CommentForm() {
 			value={content.message} 
 			placeholder='Comment'
 			onChange= {e => setContent({...content, message: e.target.value})}></textarea>
-			<button className="p-0.5 w-1/6 rounded-sm text-lg bg-amber-500 text-gray-950 hover:bg-amber-300 active:bg-amber-200" type="submit" onClick={handleSubmit}>Post</button>
+			{missingDataError && <p className='text-red-600'>Please enter a comment </p>}
+			<button className="p-0.5 w-1/6 rounded-sm text-lg bg-accent text-gray-950 hover:bg-amber-700 active:bg-amber-500" type="submit" onClick={handleSubmit}>Post</button>
+			
 			
 		</form>
 		</div>
