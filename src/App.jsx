@@ -24,7 +24,7 @@ function App() {
 	]
 
 	useEffect(() => {
-		document.title = "My Blog App"
+		document.title = "Backcountry Brookies"
 	})
 
   return (
