@@ -1,8 +1,9 @@
 import { Link } from "react-router/internal/react-server-client";
 
 export default function Navbar({pages}) {
+	
 	return (
-		<ul className="w-full flex flex-row justify-around ">
+		<ul className={`grid grid-cols-${pages.length}`}>
 			{pages.map((page, i) => {
 				return (
 				<li key={i}>

@@ -9,6 +9,8 @@ import ContactForm from './components/contact/ContactForm.jsx';
 import { ThemeProvider } from './components/theme/ThemeContext.jsx';
 import { useEffect } from 'react';
 import HomePage from './components/homePage/HomePage.jsx';
+import { LoginProvider } from './components/login/LoginContext.jsx';
+import LoginForm from './components/login/LoginForm.jsx';
 
 
 // import posts from "./data/posts.json" with {type: 'json'}
@@ -18,29 +20,32 @@ function App() {
 
 
 	const pages = [
-		{name: "Home", link:"/"},
-		{name: "Blog", link: "/blog"}, 
-		{name: "Contact", link: "/contact"}
+		{ name: "Home", link: "/" },
+		{ name: "Blog", link: "/blog" },
+		{ name: "Contact", link: "/contact" }
 	]
 
 	useEffect(() => {
 		document.title = "Backcountry Brookies"
 	})
 
-  return (
-	  <ThemeProvider>
-		<div className="bg-background text-text">
-		  <Routes>
-			<Route element={<CommonLayout pages={pages}/>}>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/blog" element={<BlogPostsList/>}/>
-				<Route path="/contact" element={<ContactForm/>}/>
-				<Route path="/posts/:post_id" element={<IndividualBlogPost />} />
-			</Route>
-		  </Routes>
-	  </div>
-	  </ThemeProvider>
-  )
+	return (
+		<ThemeProvider>
+			<LoginProvider>
+				<div className="bg-background text-text">
+					<Routes>
+						<Route element={<CommonLayout pages={pages} />}>
+							<Route path="/" element={<HomePage />} />
+							<Route path="/blog" element={<BlogPostsList />} />
+							<Route path="/contact" element={<ContactForm />} />
+							<Route path="/posts/:post_id" element={<IndividualBlogPost />} />
+							<Route path="/login" element={<LoginForm />} />
+						</Route>
+					</Routes>
+				</div>
+			</LoginProvider>
+		</ThemeProvider>
+	)
 }
 
 export default App
