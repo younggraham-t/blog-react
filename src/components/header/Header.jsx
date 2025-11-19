@@ -5,18 +5,18 @@ export default function Header({ pages }) {
 
 	return (
 
-		<header className="w-full grid grid-cols-12 gap-1 text-center bg-primary text-text">
-			<div className="col-span-2">
+		<header className="w-full md:grid md:grid-cols-12 md:gap-1 text-center bg-primary text-text pb-2">
+			<div className="md:col-span-2 md:w-full w-3/4 m-auto">
 				<img className="" src="/src/assets/blogLogo.svg" alt="logo of backcountry brookies" />
 			</div>
-			<div className="col-span-5">
+			<div className="md:col-span-5">
 				
 			</div>
-			<div className="col-span-4 content-center">
+			<div className="md:col-span-4 content-center">
 				<Navbar pages={pages} />
 			</div>
 
-			<div className="col-span-1 content-center justify-center">
+			<div className="md:col-span-1 content-center justify-center">
 				{/*
 				<ThemeToggle />
 				*/}
