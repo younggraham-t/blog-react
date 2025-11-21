@@ -2,8 +2,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
-export function ThemeProvider({children}) {
-	const [theme, setTheme] = useState('dark');
+export function ThemeProvider({children, initialTheme='dark'}) {
+	const [theme, setTheme] = useState(initialTheme);
 	const toggleTheme = () => { 
 		setTheme(theme === 'light' ? 'dark' : 'light')
 	};

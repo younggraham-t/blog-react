@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import HomePage from './components/homePage/HomePage.jsx';
 import { LoginProvider } from './components/login/LoginContext.jsx';
 import LoginForm from './components/login/LoginForm.jsx';
+import { pages } from './pages.js';
 
 
 // import posts from "./data/posts.json" with {type: 'json'}
@@ -19,11 +20,6 @@ import LoginForm from './components/login/LoginForm.jsx';
 function App() {
 
 
-	const pages = [
-		{ name: "Home", link: "/" },
-		{ name: "Blog", link: "/blog" },
-		{ name: "Contact", link: "/contact" }
-	]
 
 	useEffect(() => {
 		document.title = "Backcountry Brookies"

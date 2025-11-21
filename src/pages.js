@@ -1,0 +1,5 @@
+export const pages = [
+	{ name: "Home", link: "/" },
+	{ name: "Blog", link: "/blog" },
+	{ name: "Contact", link: "/contact" }
+]

@@ -1,15 +1,16 @@
+import React from "react";
 import { createContext, useState } from "react";
 import { dummyLogin } from "./dummyLogin";
 
 const LoginContext = createContext();
+const unAuthenticatedData = {
+	username: "",
+	authenticated: false,
+}
 
-export function LoginProvider({children}) {
+export function LoginProvider({children, initialValue=unAuthenticatedData}) {
 	
-	const unAuthenticatedData = {
-		username: "",
-		authenticated: false,
-	}
-	const [authenticated, setAuthenticated] = useState(unAuthenticatedData);
+	const [authenticated, setAuthenticated] = useState(initialValue);
 	
 	const getAuthentication = (username, password) => {
 		

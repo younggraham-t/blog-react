@@ -25,7 +25,7 @@ export default function CommentForm() {
 
 	if (!authenticated.authenticated) {
 		return (
-			<p className='flex flex-row gap-1 m-auto'><span className='text-accent'><LoginLink from/></span> to post a comment </p>
+			<p data-testid="login-to-comment" className='flex flex-row gap-1 m-auto'><span className='text-accent'><LoginLink from/></span> to post a comment </p>
 		)
 	}
 

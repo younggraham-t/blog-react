@@ -1,5 +1,5 @@
 import { Link } from "react-router/internal/react-server-client";
-
+import banner from "../../assets/Banner.svg"
 
 function HomePage() {
 	return (
@@ -12,7 +12,7 @@ function HomePage() {
 				<h2 className="text-lg">Read my <Link to="/blog" className="text-accent">Blog</Link></h2>
 			</div>
 		
-			<img src="src/assets/Banner.svg" alt="an image of a brook trout"/>
+			<img src={banner} alt="an image of a brook trout"/>
 		</div>
 	)
 }
