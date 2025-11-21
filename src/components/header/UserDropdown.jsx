@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useLogin } from "../login/useLogin"
 import LoginLink from "../login/LoginLink";
@@ -17,7 +18,7 @@ function UserDropdown() {
 	]
 
 	return (
-		<div className="absolute top-5 right-5">
+		<div data-testid="user-dropdown" className="absolute top-5 right-5">
 			{
 				authenticated.authenticated ?
 					<div>
