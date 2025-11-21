@@ -49,7 +49,7 @@ export default function ContactForm() {
 					value={formData.message}
 					onChange={e => setFormData({...formData, message:e.target.value})}
 				/>
-				<button className="bg-amber-600 rounded w-1/3 m-auto text-gray-950" type="submit">Send</button>
+				<button className="bg-accent rounded w-1/3 m-auto text-gray-950" type="submit">Send</button>
 			</form>
 		</div>
 }
